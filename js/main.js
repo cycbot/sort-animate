@@ -4,13 +4,34 @@
 let select = document.querySelector('#select')
 let startBtn = document.querySelector('#startBtn')
 let randomBtn = document.querySelector('#randomBtn')
+let inputBtn = document.querySelector('#inputBtn')
+
 let originArr = []
 
-
+let arrLen = document.querySelector('#arrLen')
+let arrValue = document.querySelector('#arrInput')
 randomBtn.addEventListener('click', () => {
-  for (let i = 0; i < 15; i++) {
+  let Len = arrLen.value
+  if( Len < 10 || Len > 30) {
+    alert('数组长度10-30')
+    return
+  }
+  originArr = []
+  for (let i = 0; i < Len; i++) {
     originArr[i] = Math.floor(Math.random() * 30) + 1
   }
+  animate.init(originArr)
+  startBtn.disabled = false
+})
+
+inputBtn.addEventListener('click', () => {
+  let value = arrValue.value.split(',')
+  if ( value.length < 10 || value.length > 30) {
+    alert('数组长度10-30')
+    return
+  }
+  originArr = []
+  originArr = value
   animate.init(originArr)
   startBtn.disabled = false
 })

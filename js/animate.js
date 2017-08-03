@@ -47,7 +47,7 @@
   }
 
   function init(originArr) {
-    while (target.firstChild) {
+    while (target.hasChildNodes()) {
       target.removeChild(target.firstChild)
     }
     let fragment = document.createDocumentFragment()

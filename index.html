@@ -18,7 +18,9 @@
             transition: left 500ms;
             text-align: center;
         }
-
+        #arrInput {
+            width: 300px;
+        }
     </style>
 </head>
 <body>
@@ -29,7 +31,14 @@
     <option value="快速排序">快速排序</option>
 </select>
 <button id="startBtn" disabled>开始排序</button>
+<lebel>生成数组长度(10-30)</lebel>
+<input id="arrLen" type="text" value="20">
 <button id="randomBtn">生成随机数组</button>
+<div style="margin-top: 5px">
+    <label>输入数组(1,2,3)</label>
+    <input id="arrInput" type="text">
+    <button id="inputBtn">生成数组</button>
+</div>
 <div id="target"></div>
 
 <script src="js/main.js"></script>
